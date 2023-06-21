@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import { Amplify, API } from 'aws-amplify';
 import { useEffect, useState } from 'react';
-
+import Canvas from './Canvas';
 
 
 function App() {
@@ -37,23 +36,22 @@ function App() {
     getData().catch(console.error)
  
   }, [response]);
+  let props = {
+    h: 1000,
+    w: 1000,
+    minHeight: 10, 
+    minWidth: 10
+  }
+
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="Data">{ JSON.stringify(response, null, 2) } </p>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        Test
+      </div>
+      <Canvas {...props}>
+        
+      </Canvas>
     </div>
   );
 }
